@@ -11,15 +11,15 @@ export default function Dashboard() {
   const [search, setSearch] = useState("")
 
   return (
-    <div style={{ display: "flex" }}>
+    <div style={{ display: "flex", background:"#F4F4F8" }}>
 
       <Sidebar />
 
-      <div style={{ flex: 1, background: "#f7f7fb" }}>
+      <div style={{ flex: 1, background: "#F4F4F8", margin: "15px" }}>
 
         <Header />
 
-        <div style={{ padding: 30 }}>
+        <div style={{ padding: "15px", background: "green", borderRadius: "6px" }}>
 
           <GridToolbar onSearch={setSearch} />
 

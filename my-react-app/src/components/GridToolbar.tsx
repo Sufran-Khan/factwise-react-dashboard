@@ -12,16 +12,11 @@ export default function GridToolbar({ onSearch }: any) {
   return (
     <div style={{
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "end",
       marginBottom: 15
     }}>
 
-      <div style={{ display: "flex", gap: 20 }}>
-        <button>Columns</button>
-        <button>Filters</button>
-        <button>Density</button>
-        <button>Export</button>
-      </div>
+      
 
       <input
         placeholder="Search..."
@@ -31,9 +26,13 @@ export default function GridToolbar({ onSearch }: any) {
           padding: "8px 12px",
           borderRadius: 6,
           border: "1px solid #ddd",
-          width: 220
+          width: 220,
+          marginRight: "20px"
         }}
       />
+      <div style={{ display: "flex", gap: 20 }}>
+        <button>Export</button>
+      </div>
 
     </div>
   )
