@@ -1,22 +1,37 @@
-import DashboardStats from "../components/DashboardStats"
+import Sidebar from "../layout/Sidebar"
+import Header from "../layout/Header"
 import EmployeeGrid from "../components/EmployeeGrid"
+import GridToolbar from "../components/GridToolbar"
 import { employees } from "../data/employees"
 
+import { useState } from "react"
 
+export default function Dashboard() {
 
-function Dashboard() {
+  const [search, setSearch] = useState("")
 
   return (
-    <div style={{ padding: "24px", background: "black"}}>
-      <h2 style={{ marginBottom: "20px" }}>
-        Employee Management Dashboard
-      </h2>
+    <div style={{ display: "flex" }}>
 
-      <DashboardStats employees={employees} />
+      <Sidebar />
 
-      <EmployeeGrid employees={employees} />
+      <div style={{ flex: 1, background: "#f7f7fb" }}>
+
+        <Header />
+
+        <div style={{ padding: 30 }}>
+
+          <GridToolbar onSearch={setSearch} />
+
+          <EmployeeGrid
+            employees={employees}
+            search={search}
+          />
+
+        </div>
+
+      </div>
+
     </div>
   )
 }
-
-export default Dashboard

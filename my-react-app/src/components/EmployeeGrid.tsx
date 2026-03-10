@@ -1,5 +1,5 @@
 import { AgGridReact } from "ag-grid-react"
-import { useMemo } from "react"
+import { useMemo, useRef } from "react"
 import type { Employee } from "../types/employee"
 import type { ColDef, ICellRendererParams, ValueFormatterParams, ValueGetterParams } from "ag-grid-community"
 
@@ -7,7 +7,10 @@ type Props = {
     employees: Employee[]
 }
 
-export default function EmployeeGrid({ employees }: Props) {
+// export default function EmployeeGrid({ employees }: Props) {
+export default function EmployeeGrid({ employees, search }: any) {
+
+    const gridRef = useRef<any>(null)
 
     const columnDefs: ColDef<Employee>[] = [
 
@@ -61,8 +64,10 @@ export default function EmployeeGrid({ employees }: Props) {
 
     return (
         <div className="ag-theme-alpine" style={{ height: 500 }}>
-            <AgGridReact<Employee>
+            <AgGridReact
+                ref={gridRef}
                 rowData={employees}
+                quickFilterText={search}
                 columnDefs={columnDefs}
                 defaultColDef={defaultColDef}
                 pagination
