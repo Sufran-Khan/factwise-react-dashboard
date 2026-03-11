@@ -10,7 +10,7 @@ export default function Header() {
         borderBottom: "1px solid #eee",
         borderRadius: "8px",
         marginBottom: "20px",
-
+        border: "2px solid black",
       }}
     >
       <h2 style={{ margin: 0, color: "black",  }}>Factwise Employee Record</h2>

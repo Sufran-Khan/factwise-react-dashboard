@@ -1,13 +1,18 @@
-import { useState } from 'react'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
-
-import './App.css'
-import Dashboard from './pages/Dashboard'
+import "./App.css"
+import Reporting from "./pages/Reporting"
+import Dashboard from "./pages/Dashboard"
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return <Dashboard />
+  return (
+    <Router>
+      <Switch>
+        <Route path="/" exact component={Dashboard} />
+        <Route path="/reporting" component={Reporting} />
+      </Switch>
+    </Router>
+  )
 }
 
 export default App

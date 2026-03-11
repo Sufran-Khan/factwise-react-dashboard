@@ -6,10 +6,12 @@ interface Props {
 
 const cardStyle: React.CSSProperties = {
   padding: "16px",
-  background: "red",
+  background: "rgb(75, 29, 115)",
   borderRadius: "6px",
   boxShadow: "0 2px 6px rgba(0,0,0,0.08)",
-  minWidth: "160px"
+  minWidth: "160px",
+  color: "white",
+  textAlign: "center",
 }
 
 function DashboardStats({ employees }: Props) {
@@ -28,7 +30,7 @@ function DashboardStats({ employees }: Props) {
   )
 
   return (
-    <div style={{ display: "flex", gap: "16px", marginBottom: "20px" }}>
+    <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "20px" }}>
       <div style={cardStyle}>
         <h4>Total Employees</h4>
         <p>{totalEmployees}</p>

@@ -19,7 +19,7 @@ export default function Dashboard() {
 
         <Header />
 
-        <div style={{ padding: "15px", background: "green", borderRadius: "6px" }}>
+        <div style={{ padding: "15px", background: "white", borderRadius: "6px" }}>
 
           <GridToolbar onSearch={setSearch} />
 

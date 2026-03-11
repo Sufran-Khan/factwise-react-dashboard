@@ -1,3 +1,5 @@
+import { Link, useLocation } from "react-router-dom";
+
 export default function Sidebar() {
   return (
     <div style={{
@@ -19,28 +21,41 @@ export default function Sidebar() {
         marginBottom: 30
       }} />
 
-      <SidebarItem label="Menu" />
-      <SidebarItem label="Pipeline" active />
-      <SidebarItem label="Tasks" />
-      <SidebarItem label="Notifications" />
-      <SidebarItem label="Reporting" />
+    <div style={{
+        padding: "-5px"
+    }}>
+         <div>
+        <SidebarItem label="Home" to="/" active={location.pathname === "/"} />
+        {/* <SidebarItem label="Pipeline" to="/pipeline" active={location.pathname === "/pipeline"} /> */}
+        {/* <SidebarItem label="Tasks" to="/tasks" active={location.pathname === "/tasks"} /> */}
+        {/* <SidebarItem label="Notifications" to="/notifications" active={location.pathname === "/notifications"} /> */}
+        <SidebarItem label="Reports" to="/reporting" active={location.pathname === "/reporting"} />
+      </div>
+    </div>
+
+      
 
     </div>
   )
 }
 
-function SidebarItem({ label, active }: any) {
+function SidebarItem({ label, to, active }: any) {
   return (
-    <div
-      style={{
-        padding: "14px 0",
-        width: "100%",
-        textAlign: "center",
-        background: active ? "#6A2EA6" : "transparent",
-        fontSize: 12
-      }}
+    <Link
+      to={to}
+      style={{ textDecoration: "none", color: "white", width: "100%" }}
     >
-      {label}
-    </div>
+      <div
+        style={{
+          padding: "14px 0",
+          width: "100%",
+          textAlign: "center",
+          background: active ? "#6A2EA6" : "transparent",
+          fontSize: 12
+        }}
+      >
+        {label}
+      </div>
+    </Link>
   )
 }
