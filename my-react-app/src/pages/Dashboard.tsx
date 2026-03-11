@@ -4,14 +4,20 @@ import EmployeeGrid from "../components/EmployeeGrid"
 import GridToolbar from "../components/GridToolbar"
 import { employees } from "../data/employees"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 
 export default function Dashboard() {
 
   const [search, setSearch] = useState("")
 
+  const gridRef = useRef<any>(null)
+
+  const handleExport = () => {
+    gridRef.current?.exportToExcel()
+  }
+
   return (
-    <div style={{ display: "flex", background:"#F4F4F8" }}>
+    <div style={{ display: "flex", background: "#F4F4F8" }}>
 
       <Sidebar />
 
@@ -21,9 +27,13 @@ export default function Dashboard() {
 
         <div style={{ padding: "15px", background: "white", borderRadius: "6px" }}>
 
-          <GridToolbar onSearch={setSearch} />
+          <GridToolbar
+            onSearch={setSearch}
+            onExport={handleExport}
+          />
 
           <EmployeeGrid
+            ref={gridRef}
             employees={employees}
             search={search}
           />

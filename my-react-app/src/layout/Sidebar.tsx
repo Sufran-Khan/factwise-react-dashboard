@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
 
 export default function Sidebar() {
+  const location = useLocation();
+  
   return (
     <div style={{
       width: "70px",
