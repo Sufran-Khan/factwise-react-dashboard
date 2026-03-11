@@ -53,6 +53,8 @@ function SidebarItem({ label, to, active }: any) {
           width: "100%",
           textAlign: "center",
           background: active ? "#6A2EA6" : "transparent",
+          border: active ? "1px solid white" : "",
+          borderRadius: "8px",
           fontSize: 12
         }}
       >

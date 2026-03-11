@@ -30,27 +30,30 @@ function DashboardStats({ employees }: Props) {
   )
 
   return (
-    <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "20px" }}>
-      <div style={cardStyle}>
-        <h4>Total Employees</h4>
-        <p>{totalEmployees}</p>
-      </div>
+    <div style={{ background: "white", padding: "15px", borderRadius: "8px", height: "600px"}}>
+      <div style={{ display: "flex", justifyContent: "space-around", marginBottom: "20px" }}>
+        <div style={cardStyle}>
+          <h4>Total Employees</h4>
+          <p>{totalEmployees}</p>
+        </div>
 
-      <div style={cardStyle}>
-        <h4>Active Employees</h4>
-        <p>{activeEmployees}</p>
-      </div>
+        <div style={cardStyle}>
+          <h4>Active Employees</h4>
+          <p>{activeEmployees}</p>
+        </div>
 
-      <div style={cardStyle}>
-        <h4>Avg Performance</h4>
-        <p>{avgRating.toFixed(1)}</p>
-      </div>
+        <div style={cardStyle}>
+          <h4>Avg Performance</h4>
+          <p>{avgRating.toFixed(1)}</p>
+        </div>
 
-      <div style={cardStyle}>
-        <h4>Total Projects</h4>
-        <p>{totalProjects}</p>
+        <div style={cardStyle}>
+          <h4>Total Projects</h4>
+          <p>{totalProjects}</p>
+        </div>
       </div>
     </div>
+
   )
 }
 
